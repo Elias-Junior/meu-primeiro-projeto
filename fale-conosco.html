@@ -4,6 +4,7 @@
     <meta charset="utf-8"/>
     <title>tudo sobre google glass</title>
     <link rel="stylesheet" type="text/css" href="teste2.css">
+    <link rel="stylesheet" type="text/css" href="_css/form.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet">
 </head>
@@ -34,41 +35,79 @@
     </nav>
 
 </header>
+<section id="corpo-full">
+    <article id="noticia-principal">
+        <header id="cabecalho-artigo"> 
+            <hgroup>
+                <h3>Fale Conosco > Contato</h3>
+                <h1>Formulário de Contato</h1>
+                <h2>por Gustavo Guanabara</h2>
+                <h3 class="direita">Atualizado em 01/Maio/2013</h3>
+            </hgroup>
+        </header>
 
-Fale Conosco > Contato
-Formulário de Contato
-por Gustavo Guanabara
-Atualizado em 01/Maio/2013
+</article>
+</section>
 
-Identificação do Usuário
-    Nome:
-    Senha:
-    E-mail:
-    Sexo:
-        - Masculino
-        - Feminino
-    Data de Nascimento:
+<form method="post" id="fcontato" action="mailto:contao@cursosemvideo"> 
 
-Endereço do Usuário
-    Logradouro:
-    Número:
-    Estado:
-    Cidade:
+    <fieldset id="usuario"><legend>dentificação do Usuário</legend>
+    <p><label for="cnome">Nome:</label><input type="text" name="tnome" id="cnome" size="20" maxlength="30" placeholder="Nome Completo"></p>
+    <p><label for="csenha">Senha:</label> <input type="password" name="tsenha" id="csenha" size="8" maxlength="8" placeholder="8 dígitos"></p>
+    <p><label for="cmail">E-mail: <input type="E-mail" name="tmail" id="cmail" size="20" maxlength="40"></p>
+    <fieldset id="sexo"><legend>Sexo:</legend>
+        <input type="radio" name="tsexo" id="cmasc" checked/> <label for="cmasc">Masculino</label><br>
+        <input type="radio" name="tsexo" id="cfem"> <label for="cfem">Feminino</label></fildset>
+    <p><label for="cnasc">Data de Nascimento:</label><input type="date" name="tnasc" id="cnasc"></p>
+</fieldset> 
 
-Mensagem do Usuário
-    Grau de Urgência:
-    Mensagem:
+<fieldset id="endereco"><legend>Endereço do Usuário</legend>
+    <p><label for="crua">Logradouro:</label><input type="text" name="trua" id="crua" size="13" maxlength="80" placeholder="Rua, Av, Trav,..."></p>
+    <p><label for="cnum">Número:</label><input type="number" name="tnum" id="cnum" min="0" max="99999"></p>
+    <p><label for="cest">Estado:</label> <select name="test" id="cest">
+        <optgroup label="Regiao Sudeste">
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="SP" selected="">São Paulo</option>
+            <option value="MG">Minas Gerais</option>
+        </optgroup>
 
-Quero um Google Glass
-    Gostaria de adquirir um Google Glass quando disponível
-    Cor:
-    Quantidade:
-    Preço Total: R$
+        <optgroup label="Regiao Sul">
+            <option value="PR">Paraná</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="RS">Rio Grande do Sul</option>
+        </optgroup>
+
+    </select></p>
+
+    <p><label for="ccid">Cidade:</label><input type="text" name="tcid" id="ccid" maxlength="40" size="20" placeholder="Sua Cidade" list="cidades"></p><datalist id="cidades">
+        <option value="Rio de Janeiro"></option>
+        <option value="Nova Iguaçu"></option>
+        <option value="Niterói"></option>
+        <option value="Belford Roxo"></option>>
+    </datalist>
+</fieldset> 
+
+<fieldset id="mensagem"><legend>Mensagem do Usuário</legend>
+    <p><label for="curg">Grau de Urgência:Mín</label><input type="range" name="turg" id="curg" min="0" max="10" step="2">Max</p>
+    <p><Label for="cmsg">Mensagem:</Label><textarea name="tsmg" id="cmsg" cols="45" rows="5" placeholder="Deixe aqui sua mensagem"></textarea></p>
+</fieldset> 
+
+<fieldset id="pedido"><legend>Quero um Google Glass</legend>
+    <p><label for="cped">Gostaria de adquirir um Google Glass quando disponível</label></p>
+    <p><label for="ccor">Cor:</label></p>
+    <p><label for="cqtd">Quantidade:</label></p>
+    <p><label for="ctot">Preço Total: R$</label></p>
+</fieldset> 
+
 
 
 [BOTÃO ENVIAR]
+</form>
 
 <footer id="rodape">
 <p>Copyright 2013 - by Gustavo Guanabara <br/> 
 <a href="http://facebook.com/cursosemvideo" target="_blank">Facebook</a>|<a href="http://twitter.com/cursosemvideo"target="_blank">twitwer</a></p>
 </footer>
+</div>
+</body>
+</html>
