@@ -3,13 +3,21 @@
 <head>
     <meta charset="utf-8"/>
     <title>tudo sobre google glass</title>
-    <link rel="stylesheet" type="text/css" href="teste2.css">
-    <link rel="stylesheet" type="text/css" href="_css/form.css">
-<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet">
-</head>
+    <link rel="stylesheet" type="text/css" href="teste2.css"/>
+    <link rel="stylesheet" type="text/css" href="_css/form.css"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet"/>
 <script src="teste3.js"></script>
-    
+
+
+<script>
+    function calc_total () {
+        var qtd = parseInt(document.getElementById('cQtd').value);
+        var tot = qtd * 1500;
+        document.getElementById('cTot').value = tot;
+    }
+</script>
+</head>  
 
 <body>
 <div id="interface" >
@@ -49,17 +57,19 @@
 </article>
 </section>
 
-<form method="post" id="fcontato" action="mailto:contao@cursosemvideo"> 
+<form method="post" id="fcontato" action="mailto:contao@cursosemvideo" oninput="calc_total();"> 
 
     <fieldset id="usuario"><legend>dentificação do Usuário</legend>
-    <p><label for="cnome">Nome:</label><input type="text" name="tnome" id="cnome" size="20" maxlength="30" placeholder="Nome Completo"></p>
-    <p><label for="csenha">Senha:</label> <input type="password" name="tsenha" id="csenha" size="8" maxlength="8" placeholder="8 dígitos"></p>
-    <p><label for="cmail">E-mail: <input type="E-mail" name="tmail" id="cmail" size="20" maxlength="40"></p>
-    <fieldset id="sexo"><legend>Sexo:</legend>
-        <input type="radio" name="tsexo" id="cmasc" checked/> <label for="cmasc">Masculino</label><br>
-        <input type="radio" name="tsexo" id="cfem"> <label for="cfem">Feminino</label></fildset>
-    <p><label for="cnasc">Data de Nascimento:</label><input type="date" name="tnasc" id="cnasc"></p>
-</fieldset> 
+        <p><label for="cnome">Nome:</label><input type="text" name="tnome" id="cnome" size="20" maxlength="30" placeholder="Nome Completo"></p>
+        <p><label for="csenha">Senha:</label> <input type="password" name="tsenha" id="csenha" size="8" maxlength="8" placeholder="8 dígitos"></p>
+        <p><label for="cmail">E-mail: <input type="E-mail" name="tmail" id="cmail" size="20" maxlength="40"></p>
+        <fieldset id="sexo"><legend>Sexo:</legend>
+            <input type="radio" name="tsexo" id="cmasc" checked/> <label for="cmasc">Masculino</label><br>
+            <input type="radio" name="tsexo" id="cfem"> <label for="cfem">Feminino</label>
+        </fieldset>
+            <p><label for="cnasc">Data de Nascimento:</label><input type="date" name="tnasc" id="cnasc"></p>
+    </fieldset>
+     
 
 <fieldset id="endereco"><legend>Endereço do Usuário</legend>
     <p><label for="crua">Logradouro:</label><input type="text" name="trua" id="crua" size="13" maxlength="80" placeholder="Rua, Av, Trav,..."></p>
@@ -88,20 +98,21 @@
 </fieldset> 
 
 <fieldset id="mensagem"><legend>Mensagem do Usuário</legend>
-    <p><label for="curg">Grau de Urgência:Mín</label><input type="range" name="turg" id="curg" min="0" max="10" step="2">Max</p>
-    <p><Label for="cmsg">Mensagem:</Label><textarea name="tsmg" id="cmsg" cols="45" rows="5" placeholder="Deixe aqui sua mensagem"></textarea></p>
+    <p><label for="curg">Grau de Urgência: Mín</label><input type="range" name="turg" id="curg" min="0" max="10" step="2">Max</p>
+    <p><Label for="cmsg" class="text_msg">Mensagem:</Label><textarea name="tsmg" id="cmsg" cols="45" rows="5" placeholder="Deixe aqui sua mensagem"></textarea></p>
 </fieldset> 
 
 <fieldset id="pedido"><legend>Quero um Google Glass</legend>
-    <p><label for="cped">Gostaria de adquirir um Google Glass quando disponível</label></p>
-    <p><label for="ccor">Cor:</label></p>
-    <p><label for="cqtd">Quantidade:</label></p>
-    <p><label for="ctot">Preço Total: R$</label></p>
+    <p><input type="checkbox" name="tped" id="cped" checked/>
+    <label for="cped">Gostaria de adquirir um Google Glass quando disponível</label></p>
+    <p><label for="ccor">Cor:</label><input type="color" name="tcor" id="ccor" value="#0000ff"></p>
+    <p><label for="cqtd">Quantidade:</label><input type="number" name="tQtd" id="cQtd" min="0" max="5"></p>
+    <p><label for="ctot">Preço Total: R$</label><input type="text" name="tTot" id="cTot" placeholder="Total a Pagar" readonly/></p>
 </fieldset> 
 
 
+<input type="image" name="tenviar" src="_imagens/botao-enviar.png"/>
 
-[BOTÃO ENVIAR]
 </form>
 
 <footer id="rodape">
